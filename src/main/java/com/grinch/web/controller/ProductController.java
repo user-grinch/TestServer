@@ -3,7 +3,6 @@ package com.grinch.web.controller;
 import com.grinch.web.model.Product;
 import com.grinch.web.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +11,11 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductService service;
+
+    @GetMapping("/test")
+    public String test(){
+        return "Hello Web";
+    }
 
     @GetMapping("/products")
     public List<Product> getProducts(){
